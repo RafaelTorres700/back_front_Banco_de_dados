@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Buscar Produtos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1> Buscar Produtos por Nome</h1>
+
+  <input type="text" id="filtro-nome" placeholder="Digite um nome ou inicial">
+  <button onclick="buscar()">Buscar</button>
+  <a href="index.html">← Voltar para Home</a>
+
+  <h2>Resultados</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th><th>Nome</th><th>Preco</th><th>Estoque</th>
+      </tr>
+    </thead>
+    <tbody id="resultado-tabela"></tbody>
+  </table>
+
+  <script src="buscar.js"></script>
+</body>
+</html>

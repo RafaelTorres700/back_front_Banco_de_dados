@@ -1,0 +1,81 @@
+FROM node:18-alpine
+
+#  MVC
+
+# MODEL - LIDA DIRETAMENTE COM BANCO DE DADOS
+# VIEW - FRONTEND
+# CONTROLLER - ONDE CONTÉM A LÓGICA DA APLICAÇÃO
+
+# EXPRESS - FRAMEWORK PARA CRIAÇÃO DE APLICATIVOS WEB
+# ROUTES - ROTAS DA APLICAÇÃO
+# NODEMON - MONITOR DE ALTERAÇÕES NO CÓDIGO
+# BODY-PARSER - PARSEIA O CORPO DAS REQUISIÇÕES
+
+# Projeto Backend Aula 01
+
+# Este projeto é um exemplo prático de backend utilizando Node.js, Express e MySQL, seguindo o padrão MVC (Model-View-Controller).
+
+# ## Estrutura do Projeto
+# - **Model:** Responsável pela comunicação direta com o banco de dados (MySQL).
+# - **View:** Não implementada neste exemplo, pois o foco é o backend (API REST).
+# - **Controller:** Onde está a lógica da aplicação e o tratamento das rotas.
+
+# ## Tecnologias Utilizadas
+# - **Node.js:** Ambiente de execução JavaScript.
+# - **Express:** Framework para criação de APIs e aplicativos web.
+# - **MySQL:** Banco de dados relacional.
+# - **Nodemon:** Monitoramento de alterações no código para reiniciar o servidor automaticamente.
+# - **Body-Parser:** Middleware para interpretar o corpo das requisições em JSON.
+
+# ---------------------- PASSO A PASSO DAS DEPENDENCIAS EXECUTAR NA PASTA RAIZ--------------------------------
+
+
+#  npm init -y
+
+#  npm intall nodemon
+
+#  npm install cors
+
+#  npm install mysql2
+
+# npm install express
+
+# npm install body-parser
+
+
+# node db.js
+
+
+
+
+
+
+# no package json crie no final do script "dev": "nodemon server.js"
+
+
+#   no terminal ->  npm run dev
+
+
+
+
+
+# ----------------ordem das pastas em mvc e funçoes-------------------------
+# Pasta src
+# 1-config -> db.js - conexão ao banco de dados
+# 2-repository -> cliente repository.js - mysql direto  
+# 3- service -> clienteService.js - Regra de negocios
+# 4- controller -> clienteControler.js - controla as entradas e respostas do HTTP
+# 5- routes -> clientesRoutes.js -Define as rotas da API 
+# 6- src/app.js - monta app express
+# 7- pasta raiz do projeto - server.js - inicia o sevrvidor - porta 3008
+
+# Banco de dados - oficina Tabela -> Cliente
+
+
+# ------------ORDEM---------------clientesRouter.js ->
+# server.js -> = app.js -> clientesRouter.js -> 
+# clienteController.js -> clienteService.js -> clienteRepository.js -> db.js
+
+# ------------ORDEM---------------
+
+# db.js -> clienteRepository.js  clienteService.js ->  clienteController.js -> clientesRouter.js ->  app.js -> server.js

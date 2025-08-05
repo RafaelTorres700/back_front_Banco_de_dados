@@ -1,0 +1,9 @@
+PASSO A PASSO DAS DEPENDENCIAS 
+
+PS C:\1-Aulas\back-front\backend> npm init -y
+
+PS C:\1-Aulas\back-front\backend> npm i express nodemon mysql2 body-parser
+
+PS C:\1-Aulas\back-front\backend> npm install cors
+
+C:\1-Aulas\back-front\backend\src\config> node db.js

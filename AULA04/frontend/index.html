@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestão de Clientes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Cadastro de Clientes</h1>
+
+  <form id="cliente-form">
+    <input type="hidden" id="cliente-id">
+    <input type="text" id="nome" placeholder="Nome" required>
+    <input type="text" id="cpf" placeholder="CPF" required>
+    <select id="sexo" required>
+      <option value="">Selecione o sexo</option>
+      <option value="Masculino">Masculino</option>
+      <option value="Feminino">Feminino</option>
+    </select>
+    <button type="submit">Salvar</button>
+  </form>
+  <a href="buscar.html">🔍 Buscar Clientes por Nome</a>
+
+
+  <h2>Lista de Clientes</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th><th>Nome</th><th>CPF</th><th>Sexo</th><th>Ações</th>
+      </tr>
+    </thead>
+    <tbody id="tabela-clientes"></tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>
