@@ -1,4 +1,65 @@
-FROM node:18-alpine
+# Projeto Fullstack - Loja de Produtos Militares
+
+Este projeto foi desenvolvido como trabalho de sala de aula para o curso de Programação Fullstack. O objetivo é demonstrar a construção de uma aplicação completa (backend + frontend) para cadastro, listagem, busca, edição e exclusão de produtos em uma loja fictícia de produtos militares.
+
+## Funcionalidades
+- Cadastro de produtos (nome, valor, quantidade)
+- Listagem de todos os produtos cadastrados
+- Edição e exclusão de produtos
+- Busca de produtos por nome
+- Interface web simples e intuitiva
+- Integração total com banco de dados MySQL
+
+## Tecnologias Utilizadas
+- **Backend:** Node.js, Express, MySQL2
+- **Frontend:** HTML, CSS, JavaScript puro
+- **Banco de Dados:** MySQL
+
+## Estrutura do Projeto
+```
+projeto/
+├── frontend/
+│   ├── index.html         # Página principal (cadastro e listagem)
+│   ├── buscar.html        # Página de busca de produtos
+│   ├── script.js          # Lógica JS do frontend
+│   ├── buscar.js          # Lógica JS da busca
+│   └── style.css          # Estilos
+├── src/
+│   ├── app.js             # Configuração do Express
+│   ├── config/
+│   │   └── db.js          # Conexão com o MySQL
+│   ├── controller/
+│   │   └── produtoController.js
+│   ├── repository/
+│   │   └── produtoRepository.js
+│   ├── routes/
+│   │   └── produtoRoutes.js
+│   └── service/
+│       └── produtoService.js
+├── server.js              # Inicialização do servidor
+└── package.json           # Dependências e scripts
+```
+
+## Como Executar
+1. Instale as dependências:
+   ```
+   npm install
+   ```
+2. Configure o banco de dados MySQL (veja o arquivo `src/config/db.js` para dados de acesso e crie a tabela `produtos`).
+3. Inicie o servidor:
+   ```
+   npm run dev
+   ```
+4. Abra o arquivo `frontend/index.html` no navegador para acessar o sistema.
+
+## Observações
+- O projeto é didático e pode ser expandido para incluir autenticação, validação, etc.
+- O backend roda por padrão na porta 3008.
+- O frontend se comunica diretamente com a API via fetch.
+
+---
+
+Trabalho desenvolvido para fins educacionais no curso de Programação Fullstack.
 
 #  MVC
 
