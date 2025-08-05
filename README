@@ -1,3 +1,13 @@
+
+ <img
+              src="assets/fotosusuarios/homem1.jpg"
+              alt="João Santos"
+              
+            />
+
+
+
+
 FROM node:18-alpine
 
 #  MVC
