@@ -60,6 +60,13 @@ projeto/
 ---
 
 Trabalho desenvolvido para fins educacionais no curso de Programação Fullstack.
+<div align="center">
+  <img src="https://i.gifer.com/BFyk.gif" alt="Gif Academia Bombadão" width="360"/>
+</div>
+
+
+
+FROM node:18-alpine
 
 #  MVC
 
