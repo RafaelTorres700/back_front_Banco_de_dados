@@ -108,7 +108,13 @@ FROM node:18-alpine
 
 # npm install express
 
-# npm install body-parser
+# npm install jsonwebtoken (para autenticação de senha)
+
+# npm install bcryptjs    (para criptografia de senha)
+
+# npm install dotenv (para criar o .env e validar senhas  do banco de dados)
+
+# npm install body-parser (somente antes da versão do express 4.6)
 
 
 # node db.js
