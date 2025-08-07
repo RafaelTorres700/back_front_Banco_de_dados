@@ -1,3 +1,5 @@
+
+
 # Projeto Fullstack - Loja de Produtos Militares
 
 Este projeto foi desenvolvido como trabalho de sala de aula para o curso de Programação Fullstack. O objetivo é demonstrar a construção de uma aplicação completa (backend + frontend) para cadastro, listagem, busca, edição e exclusão de produtos em uma loja fictícia de produtos militares.
@@ -153,3 +155,9 @@ FROM node:18-alpine
 # ------------ORDEM---------------
 
 # db.js -> clienteRepository.js  clienteService.js ->  clienteController.js -> clientesRouter.js ->  app.js -> server.js
+
+
+#endpoint para teste login/ registro
+
+# http://localhost:3010/auth/registro
+# http://localhost:3010/auth/login

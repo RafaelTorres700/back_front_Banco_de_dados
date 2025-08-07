@@ -1,41 +1,57 @@
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const repo = require('../repository/userRepository');
+// Importação dos módulos de segurança e repositório de usuários
+const bcrypt = require('bcryptjs'); // Criptografia da senha
+const jwt = require('jsonwebtoken'); // Geração de token JWT
+const repo = require('../repository/userRepository'); // Repositório com funções de banco
 
-
-const register =(login, senha, valor) =>{
-// bcrypt.hash é usado para criptografar a senha antes de armazená-la no banco de dados
+/**
+ * Função de registro de usuário
+ * - Recebe login, senha e callback (valor)
+ * - Cria hash seguro da senha com bcrypt
+ * - Chama o repositório para salvar o usuário no banco
+ */
+const register = (login, senha, valor) => {
+    // Geração do hash da senha com custo de processamento 10
     bcrypt.hash(senha, 10, (erro, hash) => {
-        if(erro)
-            return valor(erro);
+        if (erro)
+            return valor(erro); // Se falhar o hash, retorna erro
+
+        // Usuário é criado com a senha já criptografada
         repo.createUser(login, hash, valor);
     });
 };
 
+/**
+ * Função de login/autenticação
+ * - Recebe login, senha e callback (valor)
+ * - Busca o usuário no banco
+ * - Compara a senha fornecida com a senha criptografada armazenada
+ * - Se válida, gera e retorna um token JWT
+ */
 const login = (login, senha, valor) => {
- repo.findByLogin(login, (erro, resultado) => {
-        
-        if(erro || resultado.length === 0) {
-            return valor({ message: 'Usuário não encontrado' });
-        }
-        const user = resultado[0];
+    // Busca o usuário pelo login
+    repo.findByLogin(login, (erro, resultado) => {
+        if (erro || resultado.length === 0)
+            return valor('Usuario não encontrado'); // Nenhum usuário com esse login
 
+        const user = resultado[0]; // Extrai o usuário encontrado
 
-        // Verifica a senha usando bcrypt.compare
+        // Compara a senha fornecida com o hash armazenado
         bcrypt.compare(senha, user.senha, (erro, match) => {
-            if(erro || !match) {
-                return valor({ message: 'Senha incorreta' });
-            }
+            if (erro || !match)
+                return valor('Senha Inálida!'); // Senha incorreta
 
-            // Gera o token JWT se a senha estiver correta
-            const token = jwt.sign({ id: user.id, login: user.login }, 
-                process.env.JWT_SECRET, { expiresIn: '1h' });
-            return valor(null, { token });
+            // Gera o token JWT com os dados do usuário (sem senha)
+            const token = jwt.sign(
+                { id: user.id, login: user.login }, // Payload
+                process.env.JWT_SECRET,             // Chave secreta no .env
+                { expiresIn: '1h' }                 // Expiração em 1 hora
+            );
+
+            // Retorna o token ao cliente
+            valor(null, { token });
         });
-    })
-}
+    });
+};
 
-module.exports = {
-    register,
-    login
-};  
+// Exporta as funções para uso externo (controller, rotas)
+module.exports = { register, login };

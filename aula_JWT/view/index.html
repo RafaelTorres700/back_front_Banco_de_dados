@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Login e Registro - Loja Play</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <h1>Loja Play - Acesso</h1>
+
+    <div class="form-container">
+      <h2>Registrar</h2>
+      <input type="text" id="registerLogin" placeholder="Login">
+      <input type="password" id="registerSenha" placeholder="Senha">
+      <button onclick="registrar()">Cadastrar</button>
+    </div>
+
+    <div class="form-container">
+      <h2>Login</h2>
+      <input type="text" id="loginLogin" placeholder="Login">
+      <input type="password" id="loginSenha" placeholder="Senha">
+      <button onclick="logar()">Entrar</button>
+    </div>
+
+    <div id="tokenContainer">
+      <h3>Token JWT:</h3>
+      <textarea id="token" readonly></textarea>
+    </div>
+    
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
